@@ -34,6 +34,14 @@
        [
            'Spring Boot Seed Project',
            'https://github.com/kawnayeen/spring-boot-seed'
+       ],
+       [
+           'Muhhsinin',
+           'https://github.com/muhhsinin/muhhsinin.github.io'
+       ],
+       [
+           'Introduction to Java 8',
+           'https://github.com/kawnayeen/introduction-to-java-8'
        ]
    ];
    
