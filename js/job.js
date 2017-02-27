@@ -61,7 +61,13 @@
 
     function addCefaloSoftwareEngineer() {
         var softwareEngrCefalo = new JobExperience('Cefalo', 'Software Engineer', 'December,2016', 'Present');
-        softwareEngrCefalo.setWorkSummary('Developing RESTful services using Spring Technologies.');
+        softwareEngrCefalo.setWorkSummary('Deploying and Developing cloud native micro services');
+        softwareEngrCefalo.setResponsibilities(
+            [
+                'Architecting fault tolerant, high availability aws infrastructure for deploying microservices',
+                'Developing micro services using spring technologies'
+            ]
+        );
         allJobs.push(softwareEngrCefalo);
     }
 
