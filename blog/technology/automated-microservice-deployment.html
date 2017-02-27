@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Base Template</title>
+    <title>Microservice Deployment</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
 </head>
 <body>
@@ -35,7 +35,7 @@
         <h5 class="text-left">Fault Tolerant Highly Available Infrastructure</h5>
         <p>
             When we are deploying our product for public usages, it doesn't matter whether we are deploying
-            monolithic application of microservices, our infrastructure have to maintain atleaset the following
+            monolithic application or microservices, our infrastructure have to maintain atleaset the following
             criteria:-
         </p>
         <ul>
@@ -48,7 +48,7 @@
         <br/>
         <h5 class="text-left">Automating The Deployment</h5>
         <p>
-            The application was developed using Spring Boot & Spring Cloud. So, basically there is client
+            The application was developed using Spring Boot & Spring Cloud. So, basically there is
             service registration, discovery and client side load balancing via Spring Cloud Eureka. Zuul is
             used for Api Gateway.
         </p>
@@ -57,7 +57,7 @@
         </p>
         <ol>
             <li>Pushing at specific branch of the remote github repository will trigger AWS CodePipeline</li>
-            <li>Once, CodePipeline detect changes at repository, it will trigger pull latest code & trigger CodeBuild</li>
+            <li>Once, CodePipeline detect changes at repository, it will pull latest code & trigger CodeBuild</li>
             <li>Once CodeBuild is done, AWS CodeDeploy will push the build artifact at deployment server</li>
             <li>
                 At Deployment server, each deploy-able jar (spring boot fat jar with embedded tomcat) is
