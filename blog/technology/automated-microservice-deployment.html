@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Base Template</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div id="heading" class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center">Automation of Microservice Deployment </h2>
+        </div>
+    </div>
+    <br/>
+    <div>
+        <h5 class="text-left">In the Name of Allah, Most Gracious, Most Merciful</h5>
+    </div>
+    <div id="content">
+        <br/>
+        <h5 class="text-left">Introduction</h5>
+        <p>
+            Let's imagine a scenario, your application consists of 10 or more microservices. It's really great,
+            because of adopting microservice architecture, there's less conflict during development time; there's
+            less probability of ending up with a messy codebase, cause each microservice is implementing one specific
+            domain related features.
+        </p>
+        <p>
+            Now, all these good stuff of microservice architecture isn't free of cost. It's comes up with the
+            huge price of deploying all the different services to roll out an update instead of deploying one
+            monolithic application.
+        </p>
+        <br/>
+        <h5 class="text-left">Fault Tolerant Highly Available Infrastructure</h5>
+        <p>
+            When we are deploying our product for public usages, it doesn't matter whether we are deploying
+            monolithic application of microservices, our infrastructure have to maintain atleaset the following
+            criteria:-
+        </p>
+        <ul>
+            <li>Zero downtime deployment option</li>
+            <li>Scale up or down according to load</li>
+            <li>Whenever an application become unhealthy, stop routing request to that application</li>
+            <li>Infrastructure wise secured, meaning evil person can't do malicious action</li>
+            <li>Incase of disaster scenario, recover from backup with minimum amount of data loss</li>
+        </ul>
+        <br/>
+        <h5 class="text-left">Automating The Deployment</h5>
+        <p>
+            The application was developed using Spring Boot & Spring Cloud. So, basically there is client
+            service registration, discovery and client side load balancing via Spring Cloud Eureka. Zuul is
+            used for Api Gateway.
+        </p>
+        <p>
+            Here's the birds eye view of the automation :-
+        </p>
+        <ol>
+            <li>Pushing at specific branch of the remote github repository will trigger AWS CodePipeline</li>
+            <li>Once, CodePipeline detect changes at repository, it will trigger pull latest code & trigger CodeBuild</li>
+            <li>Once CodeBuild is done, AWS CodeDeploy will push the build artifact at deployment server</li>
+            <li>
+                At Deployment server, each deploy-able jar (spring boot fat jar with embedded tomcat) is
+                fused using Boxfuse
+            </li>
+            <li>
+                Each boxfuse image then converted into Amazon Machine Image (AMI) & run within AutoScaling Group
+                with predefine configuration (i.e. minimum number of instance, desired instance & max instances)
+            </li>
+            <li>
+                At the end, a specific ELB is assigned to each autoscaling group for continuous health check
+                which will ensure that any unhealthy instance will be replaced with fresh healthy instance
+            </li>
+        </ol>
+        <br/>
+        <h5 class="text-left">Conclusion</h5>
+        <p>
+            Of-course, automating microservice deployment is one of the most challenging tasks I have ever done.
+            But when I was done with the task, there's another unavoidable complexity arises. When you know that
+            one single push will end up creating 10 to 20 ec2 instance depending on the scaling configuration,
+            you will be afraid of pushing at remote repo. It happened that I'm looking at the commit message and
+            changes for few minutes, without any specific reason apart from the fear of <strong>If something went
+            wrong!</strong>. At the end, I was saying to myself, <strong>"It's difficult to build a monster. But it's way
+            more difficult to use a monster"</strong>.
+        </p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted text-left">Muhammad Kamarul Kawnayeen<br/>2017/02/27</p>
+    </div>
+</footer>
+<script src="../../js/libs/jquery-3.1.1.min.js"></script>
+<script src="../../js/libs/tether.min.js"></script>
+<script src="../../js/libs/bootstrap.min.js"></script>
+<script src="../../js/misc/analytics.js"></script>
+</body>
+</html>
