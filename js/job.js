@@ -4,7 +4,7 @@
 (function () {
     "use strict";
 
-    var allJobs = [];
+    let allJobs = [];
 
     function JobExperience(companyName, designation, startDate, endDate) {
         this.companyName = companyName;
@@ -24,7 +24,7 @@
     }
 
     JobExperience.prototype.toHtml = function () {
-        var jobEntry = '<div class="job-entry">';
+        let jobEntry = '<div class="job-entry">';
         jobEntry += this.generateJobHeading();
         jobEntry += this.generateJobSummary();
         jobEntry += '</div>';
@@ -40,7 +40,7 @@
     }
 
     JobExperience.prototype.generateJobSummary = function () {
-        var temp = '<p>'+this.workSummary;
+        let temp = '<p>'+this.workSummary;
         if(this.responsibilities.length>0){
             temp += ' <strong>Responsibility Highlights:</strong></p>';
             temp += this.generateJobResponsibilities();
@@ -51,7 +51,7 @@
     }
 
     JobExperience.prototype.generateJobResponsibilities = function () {
-        var temp = '<div><ul>';
+        let temp = '<div><ul>';
         this.responsibilities.forEach(function (element) {
             temp += '<li>'+element+'</li>';
         });
@@ -60,10 +60,11 @@
     }
 
     function addCefaloSoftwareEngineer() {
-        var softwareEngrCefalo = new JobExperience('Cefalo', 'Software Engineer', 'December,2016', 'Present');
+        let softwareEngrCefalo = new JobExperience('Cefalo', 'Software Engineer', 'December,2016', 'Present');
         softwareEngrCefalo.setWorkSummary('Deploying and Developing cloud native micro services');
         softwareEngrCefalo.setResponsibilities(
             [
+                'Developing Android application with native technologies',
                 'Architecting fault tolerant, high availability aws infrastructure for deploying microservices',
                 'Developing micro services using spring technologies'
             ]
@@ -72,7 +73,7 @@
     }
 
     function addQuesttagSoftwareEngineer() {
-        var softwareEngrQt = new JobExperience(
+        let softwareEngrQt = new JobExperience(
             'Questtag',
             'Freelance Software Engineer',
             'January,2015',
@@ -90,7 +91,7 @@
     }
 
     function addPgsLeadDeveloper() {
-        var leadDeveloperPgs = new JobExperience(
+        let leadDeveloperPgs = new JobExperience(
             'Pechas Game Studios',
             'Lead Developer',
             'October,2015',
@@ -108,7 +109,7 @@
     }
 
     function addPgsGameDeveloper() {
-        var gameDeveloperPgs = new JobExperience(
+        let gameDeveloperPgs = new JobExperience(
             'Pechas Game Studios',
             'Game Developer',
             'January,2013',
@@ -134,11 +135,11 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         populateJobExperience();
-        var content = '';
+        let content = '';
         allJobs.forEach(function (job) {
             content += job.toHtml();
         });
-        var professionContent = document.getElementById('professional-body');
+        let professionContent = document.getElementById('professional-body');
         professionContent.innerHTML = content;
     });
 }());
