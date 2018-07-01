@@ -61,10 +61,10 @@
 
     function addCefaloSoftwareEngineer() {
         let softwareEngrCefalo = new JobExperience('Cefalo', 'Software Engineer', 'December,2016', 'Present');
-        softwareEngrCefalo.setWorkSummary('Developing highly sensitive and secure android app');
+        softwareEngrCefalo.setWorkSummary('Developing highly sensitive and secure mobile app for FinTech.');
         softwareEngrCefalo.setResponsibilities(
             [
-                'Developing Android application with native technologies',
+                'Developing Android & iOS application with native technologies',
                 'Architecting fault tolerant, high availability aws infrastructure for deploying microservices',
                 'Developing micro services using spring technologies'
             ]

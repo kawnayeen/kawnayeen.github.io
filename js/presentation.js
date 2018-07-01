@@ -53,6 +53,25 @@
         ]
     ];
 
+    let screenCastRepositories = [
+        [
+            'Connect AWS account with Boxfuse',
+            'https://www.youtube.com/watch?v=F1nYZLMnTmQ'
+        ],
+        [
+            'Installing Boxfuse Client',
+            'https://www.youtube.com/watch?v=xt-teXoWTz4'
+        ],
+        [
+            'Create App at Boxfuse',
+            'https://www.youtube.com/watch?v=u_qeSi-Jxjk'
+        ],
+        [
+            'Deploy App at AWS using Boxfuse',
+            'https://www.youtube.com/watch?v=_Rn6q5zGuEU'
+        ]
+    ];
+
     function generateUnorderedList(contentArray) {
         let unorderedList = '<ul>';
         contentArray.forEach(function (element) {
@@ -70,9 +89,9 @@
     document.addEventListener('DOMContentLoaded', function () {
         let presentationContent = document.getElementById('presentation-body-content');
         let openSourceContent = document.getElementById('opensource-body-content');
+        let screenCastContent = document.getElementById('screencast-body-content');
         presentationContent.innerHTML = generateUnorderedList(presentation);
         openSourceContent.innerHTML = generateUnorderedList(openSourceRepositories);
+        screenCastContent.innerHTML = generateUnorderedList(screenCastRepositories);
     });
-
-
 }());
