@@ -1,19 +1,34 @@
-body {
+html, body {
     min-width: 630px;
+    height: 100%;
     background: white;
 }
 
 #wrapper {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 #sidebar {
     flex: 0 0 250px;
+    height: 100%;
 }
 
 #content {
     flex-grow: 1;
+}
+
+#contentArea {
+    background: #ececec;
+    height: 100%;
+    flex-grow: 1;
+}
+
+#actualContent {
+    margin-left: 25px;
+    background: white;
+    height: 100%;
 }
 
 #sideNavigation {
