@@ -28,6 +28,7 @@ html, body {
 #actualContent {
     margin-left: 25px;
     background: white;
+    padding-top: 20px;
     height: 100%;
 }
 
@@ -120,7 +121,24 @@ a[data-toggle="collapse"] {
     color: #878787;
 }
 
+#actualContent table tr td:first-child {
+    padding-left: 20px;
+}
+
+#actualContent table tr th:first-child {
+    padding-left: 20px;
+}
+
 .list-inline-item + .list-inline-item {
     padding-left: 10px;
     border-left: 1px solid currentColor;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #fbfbfb;
+}
+
+.anotherHover tbody tr:hover td {
+    background: #ececec;
 }

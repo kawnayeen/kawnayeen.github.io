@@ -62,10 +62,30 @@
             </ul>
         </div>
         <div id="contentArea">
-            <p style="padding-left: 25px;padding-top: 10px">Synonyms</p>
+            <p style="padding-left: 25px;padding-top: 10px"><strong>Synonyms</strong></p>
             <div id="actualContent">
-                <p>Registered Synonyms</p>
-                <table class="table table-striped">
+                <div class="row" style="padding-left: 20px">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Search term">
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-success">Search</button>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="dropdown" style="padding-left: 15px">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Language
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">English</a>
+                                <a class="dropdown-item" href="#">Norwegian</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="padding-left: 20px; padding-top: 20px">Registered Synonyms</p>
+                <table class="table table-striped anotherHover">
                     <thead>
                     <tr>
                         <th scope="col">Term</th>
