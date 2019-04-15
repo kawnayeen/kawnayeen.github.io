@@ -9,6 +9,8 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -55,7 +57,7 @@
     </div>
     <div id="content">
         <div id="topNavigation">
-            <ul class="list-inline float-right">
+            <ul class="list-inline float-right" style="display: none">
                 <li class="list-inline-item"><a href="#">Operations</a></li>
                 <li class="list-inline-item"><a href="#">Admin</a></li>
                 <li class="list-inline-item"><a href="#">Help</a></li>
@@ -69,11 +71,11 @@
                         <input type="text" class="form-control" placeholder="Search term">
                     </div>
                     <div class="col-md-1">
-                        <button type="button" class="btn btn-success">Search</button>
+                        <button type="button" class="btn btn-sannsyn">Search</button>
                     </div>
                     <div class="col-md-2">
                         <div class="dropdown" style="padding-left: 15px">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-sannsyn dropdown-toggle" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Language
                             </button>
@@ -82,6 +84,12 @@
                                 <a class="dropdown-item" href="#">Norwegian</a>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-5">
+                        <i class="material-icons  float-right"
+                           style="font-size: 35px; padding-right: 15px; color: #6eaf96">
+                            add_circle_outline
+                        </i>
                     </div>
                 </div>
                 <p style="padding-left: 20px; padding-top: 20px">Registered Synonyms</p>

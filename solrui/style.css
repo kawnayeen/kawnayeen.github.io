@@ -142,3 +142,8 @@ a[data-toggle="collapse"] {
 .anotherHover tbody tr:hover td {
     background: #ececec;
 }
+
+.btn-sannsyn {
+    background: #40b08e;
+    color: white;
+}
