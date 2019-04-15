@@ -1,6 +1,11 @@
-html, body {
+html {
+    height: 100%;
+}
+
+body {
     min-width: 630px;
     height: 100%;
+    min-height: 100%;
     background: white;
 }
 
@@ -17,19 +22,22 @@ html, body {
 
 #content {
     flex-grow: 1;
+    height: 100%;
 }
 
 #contentArea {
     background: #ececec;
-    height: 100%;
+    min-height: 100%;
+    padding-bottom: 20px;
     flex-grow: 1;
 }
 
 #actualContent {
-    margin-left: 25px;
-    background: white;
+    margin-left: 20px;
+    margin-right: 20px;
     padding-top: 20px;
-    height: 100%;
+    background: white;
+    flex-grow: 1;
 }
 
 #sideNavigation {
