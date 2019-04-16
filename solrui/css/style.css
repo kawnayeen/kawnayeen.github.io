@@ -61,6 +61,7 @@ body {
     min-width: 58px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 15px;
 }
 
 .sidebar-text-area {
@@ -182,7 +183,7 @@ a[data-toggle="collapse"] {
 }
 
 .menu-text-padding {
-    padding-left: 30px;
+    padding-left: 45px;
 }
 
 .menu-parent-a-border {
