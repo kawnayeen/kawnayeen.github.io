@@ -120,7 +120,7 @@ body {
     padding: 10px;
     font-size: 1.1em;
     display: block;
-    color: black;
+    color: #808080;
 }
 
 #sidebar ul li a:hover {
@@ -169,6 +169,10 @@ a[data-toggle="collapse"] {
     background-color: #fbfbfb;
 }
 
+.table-striped > tbody > tr > td {
+    color: #808080;
+}
+
 .anotherHover tbody tr:hover td {
     background: #ececec;
 }
@@ -196,4 +200,8 @@ a[data-toggle="collapse"] {
     color: #808080;
     border-radius: 3px;
     background: #f2f2f2;
+}
+
+table {
+    font-family: 'Open Sans', serif;
 }
