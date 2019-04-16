@@ -1,3 +1,8 @@
+@font-face {
+    src: url(../fonts/Campton-Medium/Campton-Medium.eot);
+    font-family: campton;
+}
+
 html {
     height: 100%;
 }
@@ -7,6 +12,9 @@ body {
     height: 100%;
     min-height: 100%;
     background: white;
+    font-family: campton;
+    font-style: normal;
+    font-weight: normal;
 }
 
 #wrapper {
@@ -16,7 +24,7 @@ body {
 }
 
 #sidebar {
-    flex: 0 0 250px;
+    flex: 0 0 232px;
     height: 100%;
 }
 
@@ -44,6 +52,23 @@ body {
     margin-top: 50px;
 }
 
+#sidebar ul li {
+    width: 232px;
+}
+
+.sidebar-icon-span {
+    width: 58px;
+    min-width: 58px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar-text-area {
+    width: 116px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #sidebar ul li a {
     text-align: left;
 }
@@ -51,7 +76,6 @@ body {
 #sidebar.active ul li a {
     padding: 20px 10px;
     text-align: center;
-    font-size: 15px;
 }
 
 #sidebar.active ul li a i {
@@ -82,9 +106,6 @@ body {
     border-bottom: 1px solid #ececec;
 }
 
-#sidebar ul li ul li {
-    margin: 0 20px;
-}
 
 #sidebar ul li ul li:first-child {
     border-top: none;
@@ -154,4 +175,24 @@ a[data-toggle="collapse"] {
 .btn-sannsyn {
     background: #40b08e;
     color: white;
+}
+
+.sannsyn-green {
+    color: #40b08e;
+}
+
+.menu-text-padding {
+    padding-left: 30px;
+}
+
+.menu-parent-a-border {
+    border-bottom: 1px solid #ececec;
+}
+
+.option-style {
+    font-family: 'Open Sans', serif;
+    font-size: 14px;
+    color: #808080;
+    border-radius: 3px;
+    background: #f2f2f2;
 }

@@ -11,7 +11,8 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/sannsyn-icon-font.css"/>
 </head>
 <body>
 <div id="wrapper">
@@ -20,36 +21,42 @@
             <img src="img/sannsyn.logo.jpg" width="225" height="75">
         </div>
         <ul class="list-unstyled components" id="sideNavigation">
-            <li class="active">
-                <a href="#">
-                    <i class="fas fa-chart-line"></i>
-                    <span style="padding-left: 7px; padding-right: 7px">Statistics</span>
+            <li>
+                <a href="#" class="menu-parent-a-border">
+                    <span class="icon-analytics sidebar-icon-span"></span>
+                    <span style="margin-left: 8px">Statistics</span>
                     <span class="float-right"><i class="fas fa-chevron-down" style="font-size: small"></i></span>
                 </a>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#">Response time</a>
+                        <a href="#">
+                            <span class="menu-text-padding">Response time</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Zero hits</a>
+                        <a href="#">
+                            <span class="menu-text-padding">Zero hits</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Trends</a>
+                        <a href="#">
+                            <span class="menu-text-padding">Trends</span>
+                        </a>
                     </li>
                 </ul>
             </li>
             <li class="active">
                 <a href="#">
-                    <i class="fas fa-home"></i>
-                    <span style="padding-left: 7px; padding-right: 7px">Administration</span>
+                    <span class="icon-settings sidebar-icon-span"></span>
+                    <span style="margin-left: 8px">Administration</span>
                     <span class="float-right"><i class="fas fa-chevron-down" style="font-size: small"></i></span>
                 </a>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#">Boost</a>
+                        <a href="#"><span class="menu-text-padding">Boost</span></a>
                     </li>
-                    <li>
-                        <a href="#">Synonyms</a>
+                    <li class="active">
+                        <a href="#"><span class="menu-text-padding">Synonyms</span></a>
                     </li>
                 </ul>
             </li>
@@ -64,7 +71,8 @@
             </ul>
         </div>
         <div id="contentArea">
-            <p style="padding-left: 25px;padding-top: 10px; height: 30px"><strong>Synonyms</strong></p>
+            <p style="padding-left: 25px;padding-top: 10px; height: 30px" class="sannsyn-green">
+                <strong>Synonyms</strong></p>
             <div id="actualContent">
                 <div class="row" style="padding-left: 20px">
                     <div class="col-md-4">
@@ -75,17 +83,14 @@
                     </div>
                     <div class="col-md-2">
                         <div class="dropdown" style="padding-left: 15px">
-                            <button class="btn btn-sannsyn dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Language
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">English</a>
-                                <a class="dropdown-item" href="#">Norwegian</a>
-                            </div>
+                            <select class="custom-select">
+                                <option selected>Language</option>
+                                <option value="english">English</option>
+                                <option value="norwegian">Norwegian</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-5" data-toggle="modal" data-target="#createSynonym">
+                    <div class="col-md-5">
                         <i class="material-icons  float-right"
                            style="font-size: 35px; padding-right: 15px; color: #6eaf96">
                             add_circle_outline
@@ -96,8 +101,8 @@
                 <table class="table table-striped anotherHover">
                     <thead>
                     <tr>
-                        <th scope="col">Term</th>
-                        <th scope="col">Synonyms</th>
+                        <th scope="col" class="sannsyn-green">Term</th>
+                        <th scope="col" class="sannsyn-green">Synonyms</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -155,36 +160,36 @@
         </div>
     </div>
 
-    <div id="createSynonym" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">New Synonym Mapping</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <p>Term:</p>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" placeholder="term" style="margin-left: 20px"/>
-                        </div>
-                    </div>
-                    <br/>
-                    <p>Synonyms</p>
-                    <input class="form-control" type="text" placeholder="add synonyms"/>
+    <!--    <div id="createSynonym" class="modal" tabindex="-1" role="dialog">-->
+    <!--        <div class="modal-dialog" role="document">-->
+    <!--            <div class="modal-content">-->
+    <!--                <div class="modal-header">-->
+    <!--                    <h5 class="modal-title">New Synonym Mapping</h5>-->
+    <!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+    <!--                        <span aria-hidden="true">&times;</span>-->
+    <!--                    </button>-->
+    <!--                </div>-->
+    <!--                <div class="modal-body">-->
+    <!--                    <div class="row">-->
+    <!--                        <div class="col-md-1">-->
+    <!--                            <p>Term:</p>-->
+    <!--                        </div>-->
+    <!--                        <div class="col-md-6">-->
+    <!--                            <input type="text" placeholder="term" style="margin-left: 20px"/>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <br/>-->
+    <!--                    <p>Synonyms</p>-->
+    <!--                    <input class="form-control" type="text" placeholder="add synonyms"/>-->
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">DELETE</button>
-                    <button type="button" class="btn btn-sannsyn">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--                </div>-->
+    <!--                <div class="modal-footer">-->
+    <!--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">DELETE</button>-->
+    <!--                    <button type="button" class="btn btn-sannsyn">Save</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
