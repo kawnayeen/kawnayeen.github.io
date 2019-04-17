@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-md-5">
                         <img src="img/plus_icon.png" width="40" height="40" class="float-right"
-                             style="margin-right: 15px"/>
+                             style="margin-right: 15px" onclick="showCreateSynonym()"/>
                     </div>
                 </div>
                 <p style="padding-left: 20px; padding-top: 20px; font-size: 18px; color: #808080">Registered
@@ -157,39 +157,70 @@
                     </tbody>
                 </table>
             </div>
+            <div id="createContent">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>New Synonyms mapping</p>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="icon-close-line float-right" onclick="removeCreateSynonym()"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <p style="padding-top: 8px">Term:</p>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" placeholder="term" class="form-control"/>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-1">
+                        <p style="padding-top: 8px">Language:</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group-append" style="padding-left: 15px">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">English</a>
+                                <a class="dropdown-item" href="#">Norwegian</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <p>Synonyms</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" placeholder="synonyms" class="form-control"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Symmetric Synonyms</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" placeholder="symmetric synonyms" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 offset-md-9">
+                        <button type="button" class="btn btn-secondary float-right" data-dismiss="modal" >DELETE</button>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-sannsyn float-right" >SAVE</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!--    <div id="createSynonym" class="modal" tabindex="-1" role="dialog">-->
-    <!--        <div class="modal-dialog" role="document">-->
-    <!--            <div class="modal-content">-->
-    <!--                <div class="modal-header">-->
-    <!--                    <h5 class="modal-title">New Synonym Mapping</h5>-->
-    <!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-    <!--                        <span aria-hidden="true">&times;</span>-->
-    <!--                    </button>-->
-    <!--                </div>-->
-    <!--                <div class="modal-body">-->
-    <!--                    <div class="row">-->
-    <!--                        <div class="col-md-1">-->
-    <!--                            <p>Term:</p>-->
-    <!--                        </div>-->
-    <!--                        <div class="col-md-6">-->
-    <!--                            <input type="text" placeholder="term" style="margin-left: 20px"/>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <br/>-->
-    <!--                    <p>Synonyms</p>-->
-    <!--                    <input class="form-control" type="text" placeholder="add synonyms"/>-->
-
-    <!--                </div>-->
-    <!--                <div class="modal-footer">-->
-    <!--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">DELETE</button>-->
-    <!--                    <button type="button" class="btn btn-sannsyn">Save</button>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -200,5 +231,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+<script>
+    function showCreateSynonym() {
+        let actualContentDiv = document.getElementById("actualContent");
+        let createContentDiv = document.getElementById("createContent");
+        createContentDiv.offsetWidth = actualContentDiv.offsetWidth;
+        createContentDiv.style.display = "block";
+        createContentDiv.style.width = (actualContentDiv.offsetWidth + "px");
+    }
+
+    function removeCreateSynonym() {
+        let createContentDiv = document.getElementById("createContent");
+        createContentDiv.style.display = "none";
+    }
+</script>
 </body>
 </html>
