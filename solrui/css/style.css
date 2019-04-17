@@ -218,3 +218,7 @@ a[data-toggle="collapse"] {
 table {
     font-family: 'Open Sans', serif;
 }
+
+.tag {
+    color: #1c7430;
+}
