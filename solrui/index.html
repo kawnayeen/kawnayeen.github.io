@@ -152,13 +152,14 @@
                         <td>TV</td>
                         <td>["Television"]</td>
                     </tr>
-                    <tr>
+                    <tr onclick="synonymRowClicked()">
                         <td>Happy</td>
                         <td>["glad", "joyful"]</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
+            <div id="overlayContent"></div>
             <div id="createContent">
                 <div class="row">
                     <div class="col-md-6">
@@ -239,14 +240,29 @@
     function showCreateSynonym() {
         let actualContentDiv = document.getElementById("actualContent");
         let createContentDiv = document.getElementById("createContent");
-        createContentDiv.offsetWidth = actualContentDiv.offsetWidth;
+        let overlayContentDiv = document.getElementById("overlayContent");
+
         createContentDiv.style.display = "block";
         createContentDiv.style.width = (actualContentDiv.offsetWidth + "px");
+
+        overlayContentDiv.style.display = "block";
+        overlayContentDiv.style.width = (actualContentDiv.offsetWidth + "px");
+        overlayContentDiv.style.height = (actualContentDiv.offsetHeight + "px");
+
+        actualContentDiv.style.pointerEvents = "none";
     }
 
     function removeCreateSynonym() {
         let createContentDiv = document.getElementById("createContent");
+        let actualContentDiv = document.getElementById("actualContent");
+        let overlayContentDiv = document.getElementById("overlayContent");
         createContentDiv.style.display = "none";
+        overlayContentDiv.style.display = "none";
+        actualContentDiv.style.pointerEvents = "auto";
+    }
+
+    function synonymRowClicked() {
+        console.log('Synonym row clicked');
     }
 </script>
 </body>
